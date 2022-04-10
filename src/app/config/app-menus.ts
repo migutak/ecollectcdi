@@ -1,41 +1,78 @@
-var appMenus = [{
-  'icon': 'fa fa-sitemap',
-  'title': 'Home',
-  'url': '/home'
-},{
-  'icon': 'fa fa-align-left',
-  'title': 'Menu Level',
-  'url': '',
-  'caret': 'true',
-  'submenu': [{
-    'url': '',
-    'title': 'Menu 1.1',
-    'caret': 'true',
-    'submenu': [{
-      'url': '',
-      'title': 'Menu 2.1',
-      'caret': 'true',
-      'submenu': [{
-        'url': '',
-        'title': 'Menu 3.1',
-      },{
-        'url': '',
-        'title': 'Menu 3.2'
-      }]
-    },{
-      'url': '',
-      'title': 'Menu 2.2'
-    },{
-      'url': '',
-      'title': 'Menu 2.3'
-    }]
-  },{
-    'url': '',
-    'title': 'Menu 1.2'
-  },{
-    'url': '',
-    'title': 'Menu 1.3'
-  }]
-}];
+const Home = {
+  icon: 'fas fa-home',
+  title: 'Home',
+  url: '/home',
+};
+
+
+const Work = {
+  title: 'Loans Queue',
+  url: '/work',
+  icon: 'fas fa-briefcase',
+  caret: 'true',
+  submenu: [
+    {
+      title: 'Loan arrears(ALL)',
+      url: '/work/viewall',
+    },
+    {
+      title: 'Broken PTPs',
+      url: '/work/ptps',
+    },
+    {
+      title: 'View all Loans',
+      url: '/work/allloans',
+    },
+    {
+      title: 'My Worklist',
+      url: '/work/myworklist',
+    },
+  ],
+};
+
+
+
+
+const Configurations = {
+  title: 'Configurations',
+  url: '/config',
+  icon: 'fas fa-briefcase',
+  caret: 'true',
+  submenu: [
+    {
+      title: 'Commissions',
+      url: '/config/commission',
+    },
+    {
+      title: 'Excel Uploads',
+      url: '/config/exceluploads',
+    }
+  ],
+};
+
+
+
+const collector = [
+  Home,
+  Work
+];
+
+
+const teamleader = [
+  Home,
+  Work,
+  Configurations
+];
+
+let appMenus: any[];
+
+if (1) {
+  appMenus = teamleader;
+} else if (2) {
+  appMenus = collector;
+} else {
+  appMenus = teamleader;
+}
+
 
 export default appMenus;

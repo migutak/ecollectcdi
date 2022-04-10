@@ -1,11 +1,12 @@
 {
-  "name": "color-admin",
+  "name": "ecollectcdi",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
+    "cdi": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

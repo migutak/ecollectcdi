@@ -1,7 +1,7 @@
 <div class="theme-panel" [ngClass]="{ 'active': !active }">
 	<a href="javascript:;" (click)="toggle()" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
 	<div class="theme-panel-content" data-scrollbar="true" data-height="100%">
-		<h5>App Settings</h5>
+		<h5>Customize your experience</h5>
 		
 		<!-- BEGIN theme-list -->
 		<div class="theme-list">
@@ -31,58 +31,6 @@
 		</div>
 		
 		<div class="theme-panel-divider"></div>
-		
-		<!-- BEGIN theme-switch -->
-		<div class="row mt-10px align-items-center">
-			<div class="col-8 control-label text-dark fw-bold">Header Fixed</div>
-			<div class="col-4 d-flex">
-				<div class="form-check form-switch ms-auto mb-0">
-					<input type="checkbox" class="form-check-input" name="app-header-fixed" id="appHeaderFixed" value="1" (change)="toggleHeaderFixed($event)" checked />
-					<label class="form-check-label" for="appHeaderFixed">&nbsp;</label>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-10px align-items-center">
-			<div class="col-8 control-label text-dark fw-bold">Header Inverse</div>
-			<div class="col-4 d-flex">
-				<div class="form-check form-switch ms-auto mb-0">
-					<input type="checkbox" class="form-check-input" name="app-header-inverse" id="appHeaderInverse" (change)="toggleHeaderInverse($event)" value="1" />
-					<label class="form-check-label" for="appHeaderInverse">&nbsp;</label>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-10px align-items-center">
-			<div class="col-8 control-label text-dark fw-bold">Sidebar Fixed</div>
-			<div class="col-4 d-flex">
-				<div class="form-check form-switch ms-auto mb-0">
-					<input type="checkbox" class="form-check-input" name="app-sidebar-fixed" id="appSidebarFixed" (change)="toggleSidebarFixed($event)" value="1" checked />
-					<label class="form-check-label" for="appSidebarFixed">&nbsp;</label>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-10px align-items-center">
-			<div class="col-8 control-label text-dark fw-bold">Sidebar Grid</div>
-			<div class="col-4 d-flex">
-				<div class="form-check form-switch ms-auto mb-0">
-					<input type="checkbox" class="form-check-input" name="app-sidebar-grid" id="appSidebarGrid" (change)="toggleSidebarGrid($event)" value="1" />
-					<label class="form-check-label" for="appSidebarGrid">&nbsp;</label>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-10px align-items-center">
-			<div class="col-md-8 control-label text-dark fw-bold">Gradient Enabled</div>
-			<div class="col-md-4 d-flex">
-				<div class="form-check form-switch ms-auto mb-0">
-					<input type="checkbox" class="form-check-input" name="app-gradient-enabled" id="appGradientEnabled" (change)="toggleGradientEnabled($event)" value="1" />
-					<label class="form-check-label" for="appGradientEnabled">&nbsp;</label>
-				</div>
-			</div>
-		</div>
-		<!-- END theme-switch -->
-		
-		<div class="theme-panel-divider"></div>
-		
-		<a href="https://seantheme.com/color-admin/documentation/" class="btn btn-dark d-block w-100 rounded-pill mb-10px" target="_blank"><b>Documentation</b></a>
-		<a href="javascript:;" class="btn btn-default d-block w-100 rounded-pill" data-toggle="reset-local-storage"><b>Reset Local Storage</b></a>
+
 	</div>
 </div>

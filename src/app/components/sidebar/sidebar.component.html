@@ -13,44 +13,7 @@
   
   	<!-- BEGIN menu -->
 		<div class="menu">
-			<div class="menu-item menu-profile" [ngClass]="{ 'active' : (navProfileState == 'expand') }" *ngIf="!appSettings.appSidebarSearch">
-				<a href="javascript:;" class="menu-profile-link" (click)="toggleNavProfile()">
-					<div class="menu-profile-cover with-shadow"></div>
-					<div class="menu-profile-image menu-profile-image-icon bg-gray-900 text-gray-600">
-						<i class="fa fa-user"></i>
-					</div>
-					<div class="menu-profile-info">
-						<div class="d-flex align-items-center">
-							<div class="flex-grow-1">
-								Sean Ngu
-							</div>
-							<div class="menu-caret ms-auto"></div>
-						</div>
-						<small>Front end developer</small>
-					</div>
-				</a>
-			</div>
-			<div id="appSidebarProfileMenu" class="collapse" [ngClass]="{ 'd-block' : (navProfileState == 'expand') }" *ngIf="!appSettings.appSidebarSearch">
-				<div class="menu-item pt-5px">
-					<a href="javascript:;" class="menu-link">
-						<div class="menu-icon"><i class="fa fa-cog"></i></div>
-						<div class="menu-text">Settings</div>
-					</a>
-				</div>
-				<div class="menu-item">
-					<a href="javascript:;" class="menu-link">
-						<div class="menu-icon"><i class="fa fa-pencil-alt"></i></div>
-						<div class="menu-text"> Send Feedback</div>
-					</a>
-				</div>
-				<div class="menu-item pb-5px">
-					<a href="javascript:;" class="menu-link">
-						<div class="menu-icon"><i class="fa fa-question-circle"></i></div>
-						<div class="menu-text"> Helps</div>
-					</a>
-				</div>
-				<div class="menu-divider m-0"></div>
-			</div>
+
 			
 			<div class="menu-search mb-n3" *ngIf="appSettings.appSidebarSearch">
         <input type="text" class="form-control" placeholder="Sidebar menu filter..." (keyup)="appSidebarSearch($event)" />
