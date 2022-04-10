@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/.angular" />
+      <excludeFolder url="file://$MODULE_DIR$/src/scss/apple" />
+      <excludeFolder url="file://$MODULE_DIR$/src/scss/facebook" />
+      <excludeFolder url="file://$MODULE_DIR$/src/scss/google" />
+      <excludeFolder url="file://$MODULE_DIR$/src/scss/material" />
+      <excludeFolder url="file://$MODULE_DIR$/src/scss/transparent" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
