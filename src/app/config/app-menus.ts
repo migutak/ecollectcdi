@@ -17,15 +17,15 @@ const Work = {
     },
     {
       title: 'My Allocations',
-      url: '/work/worklist',
+      url: '/work/myallocations',
     },
     {
       title: 'My Worklist',
-      url: '/work/worklist',
+      url: '/work/myworklist',
     },
     {
       title: 'Promises to Pay',
-      url: '/work/ptps',
+      url: '/work/ptp',
     },
     
   ],

@@ -17,31 +17,38 @@ const routes: Routes = [
   { path: 'home', component: HomePage, data: { title: 'Home' } },
   {
     path: 'settings/home',
-    component: SettingshomeComponent
+    component: SettingshomeComponent,
+    data: { title: 'Settings' }
   },
   {
     path: 'settings/exceluploads',
-    component: ExceluploadsComponent
+    component: ExceluploadsComponent,
+    data: { title: 'Excel' }
   },
   {
     path: 'settings/commissions',
-    component: CommissionsComponent
+    component: CommissionsComponent,
+    data: { title: 'Commissions' }
   },
   {
     path: 'work/viewall',
-    component: ViewallComponent
+    component: ViewallComponent,
+    data: { title: 'Viewall' }
   },
   {
     path: 'work/myallocations',
-    component: MyallocationsComponent
+    component: MyallocationsComponent,
+    data: { title: 'My Allocations' }
   },
   {
     path: 'work/myworklist',
-    component: MyworklistComponent
+    component: MyworklistComponent,
+    data: { title: 'My Worklist' }
   },
   {
     path: 'work/ptp',
-    component: PtpsComponent
+    component: PtpsComponent,
+    data: { title: 'PTPs' }
   }
 ];
 

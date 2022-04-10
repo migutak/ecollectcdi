@@ -10,7 +10,7 @@ export const environment = {
     adlogin: false,
     sendsms: true,
     api: HOST + '8000',
-    nodeapi: HOST + '6001/nodeapi',
+    nodeapi: HOST + '6002/nodeapi',
     reportsapi: HOST + '6002/nodeapi',
     cacheapi: HOST +  '5600/cache',
     letters_api: HOST + '8004/docx/',

@@ -465,21 +465,6 @@ export class EcolService {
         );
     }
 
-    getews(accnumber) {
-        return this.httpClient.get<any>(
-            environment.nodeapi +
-                '/tblearlywarningsigns?filter[where][CD_ACCOUNT]=' +
-                accnumber
-        );
-    }
-
-    getews_withcustnumber(custnumber) {
-        return this.httpClient.get<any>(
-            environment.nodeapi +
-                '/tblearlywarningsigns?filter[where][CUSTOMER_ID]=' +
-                custnumber
-        );
-    }
 
     getipf() {
         return this.httpClient.get<any>(environment.api + '/api/tbl_ipf');
@@ -969,55 +954,7 @@ export class EcolService {
         );
     }
 
-    putews(data) {
-        return this.httpClient.put<any>(
-            environment.api + '/api/TBL_EARLYWARNINGSIGN_STATICs',
-            data
-        );
-    }
 
-    get_earlywarningsign_static(accnumber) {
-        return this.httpClient.get<any>(
-            environment.api +
-                '/api/TBL_EARLYWARNINGSIGN_STATICs?filter[where][accnumber]=' +
-                accnumber
-        );
-    }
-
-    get_tbl_earlywarningsign_static_audit(accnumber) {
-        return this.httpClient.get<any>(
-            environment.api +
-                '/api/tbl_earlywarningsign_static_audit?filter[where][accnumber]=' +
-                accnumber +
-                '&filter[order]=lastactiondate desc'
-        );
-    }
-
-    reviewptp(data) {
-        return this.httpClient.post<any>(
-            environment.nodeapi + '/brokenptps/review',
-            data
-        );
-    }
-
-    activeptps(accnumber) {
-        return this.httpClient.get<any>(
-            environment.nodeapi + '/activeptps/active?accnumber=' + accnumber
-        );
-    }
-
-    checkews(accnumber) {
-        return this.httpClient.get<any>(
-            environment.api +
-                '/tbl_earlywarningsign?filter[where][cd_account]=' +
-                accnumber
-        );
-    }
-
-    // postptps(ptps) {
-    //     // tslint:disable-next-line:max-line-length
-    //     return this.httpClient.post<any>(environment.nodeapi + '/ptps', ptps);
-    // }
 
     postptps(body) {
         const url = environment.api + '/api/ptps';
@@ -1512,17 +1449,6 @@ export class EcolService {
         );
     }
 
-    s_account_plans(accnumber, planid) {
-        // tslint:disable-next-line:max-line-length
-        return this.httpClient.get<any>(
-            environment.api +
-                '/api/tbl_s_account_plans?filter[where][accnumber]=' +
-                accnumber +
-                '&filter[where][planid]=' +
-                planid
-        );
-    }
-
     putaccountplan(body) {
         // tslint:disable-next-line:max-line-length
         return this.httpClient.put<any>(
@@ -1824,60 +1750,19 @@ export class EcolService {
         });
     }
 
-    /*bulknotes(body) {
-        const url = environment.nodeapi + '/xlsuploads/uploadbulk-test';
-        return this.httpClient.post<any>(url, body, {
-            reportProgress: true,
-            observe: 'events',
-        });
-    }*/
-
     bulknotes(body) {
         // const url = environment.nodeapi + '/xlsuploads/uploadbulk-test';
-        const url = environment.api + '/api/notehis';
+        const url = environment.nodeapi + '/tqall';
         return this.httpClient.post<any>(url, body, {
             reportProgress: true,
             observe: 'events',
         });
-    }
-
-    insertbulknotes(body) {
-        const url = environment.nodeapi + '/notes/bulknotes';
-        return this.httpClient.post(url, body);
-    }
-
-    putnote(body) {
-        const url = environment.api + '/api/notehis';
-        return this.httpClient.put(url, body);
-    }
-
-    bulktotblcardsstatic(body) {
-        const url = environment.api + '/api/tblcard_static/actiondate';
-        return this.httpClient.post(url, body);
-    }
-
-    bulktotblportfolio(body) {
-        const url = environment.api + '/api/tbl_portfolio_static/actiondate';
-        return this.httpClient.post(url, body);
     }
 
     getthisptp(id) {
         return this.httpClient.get<any>(environment.api + '/api/ptps/' + id);
     }
 
-    ammendptp(data) {
-        return this.httpClient.post<any>(
-            environment.nodeapi + '/ptpsammend/ammendptp',
-            data
-        );
-    }
-
-    woffstory(data) {
-        return this.httpClient.put<any>(
-            environment.api + '/api/writeoffstory',
-            data
-        );
-    }
 
     upload(file: File): Observable<HttpEvent<any>> {
         const formData: FormData = new FormData();
@@ -1949,20 +1834,6 @@ export class EcolService {
         );
     }
 
-    ews_on_elasticsearch(data) {
-        return this.httpClient.post<any>(
-            environment.ews_on_elasticsearch + '/ews_on_elasticsearch/update',
-            data
-        );
-    }
-
-    clientactionplan_on_elasticsearch(data) {
-        return this.httpClient.post<any>(
-            environment.ews_on_elasticsearch +
-                '/clientactionplan_on_elasticsearch',
-            data
-        );
-    }
 
     putaccountactionplan(data) {
         return this.httpClient.put<any>(

@@ -7,6 +7,7 @@ import { NgbModule }                             from '@ng-bootstrap/ng-bootstra
 import { NgModule }                              from '@angular/core';
 import { FormsModule, ReactiveFormsModule }      from '@angular/forms';
 import * as global                               from './config/globals';
+import { HttpClientModule } from '@angular/common/http';
 
 // Main Component
 import { AppComponent }                    from './app.component';
@@ -75,6 +76,7 @@ import { HomePage }          from './pages/home/home';
     NgbModule,
     PerfectScrollbarModule,
     HighlightModule,
+    HttpClientModule,
     FullCalendarModule,
     NgxEditorModule,
     ColorSketchModule,
@@ -116,7 +118,7 @@ export class AppModule {
   constructor(private router: Router, private titleService: Title, private route: ActivatedRoute) {
     router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
-        var title = 'Color Admin | ' + this.route.snapshot.firstChild.data['title'];
+        var title = 'E-Collect | ' + this.route.snapshot.firstChild.data['title'];
         this.titleService.setTitle(title);
       }
     });

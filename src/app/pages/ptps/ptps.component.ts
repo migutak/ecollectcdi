@@ -30,7 +30,6 @@ export class PtpsComponent implements OnInit {
        
     ) {
         
-        // this.getReasons(this.accnumber); // ensure reason for default is picked when page is loading
     }
 
    

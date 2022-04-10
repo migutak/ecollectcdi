@@ -1,2 +1,43 @@
-<ng-progress #progressBar></ng-progress>
-<div>Excel uploads</div>
+<div class="alert alert-danger m-b-0">
+    <h3><i class="fa fa-info-circle"></i> Polite Notice</h3>
+    <ol>
+        <li>
+            Kindly <b>Download</b> and <b>Use</b> the provided Template
+            to Upload.
+        </li>
+        <li>Maximum allowed size to upload is <b>9MB.</b></li>
+        
+    </ol>
+    <!--      <p>Kindly Download and Use the provided Template to Upload</p>-->
+</div>
+
+<!-- Upload  -->
+<form id="file-upload-form" class="uploader">
+    <input
+        id="file-upload"
+        type="file"
+        name="fileUpload"
+        accept=".xlsx,.xls"
+        (change)="onFileChange($event)"
+    />
+
+    <label for="file-upload" id="step2">
+        <img id="file-image" src="#" alt="Preview" class="hidden" />
+        <div id="start">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Select excel file or drag here</div>
+            <div id="notimage" class="hidden">Please select excel file</div>
+            <span id="file-upload-btn" class="btn btn-primary"
+                >Select a file</span
+            >
+        </div>
+        <div id="response" class="hidden">
+            <div id="messages"></div>
+            <progress class="progress" id="file-progress" value="0">
+                <span>0</span>%
+            </progress>
+        </div>
+    </label>
+</form>
+<br />
+<div id="output"></div>
