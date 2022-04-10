@@ -1,0 +1,348 @@
+<ng-progress #progressBar></ng-progress>
+<app-panel title="Client Information Home">
+    <div class="row">
+        <!-- begin nav-tabs -->
+        <div class="col-xl-12">
+            <ul #nav="ngbNav" class="nav-pills" ngbNav>
+                <li ngbNavItem="Account info">
+                    <!--          <ng-template >-->
+                    <!--            <span class="d-sm-none">Account info</span>-->
+                    <!--            <span class="d-sm-block">Account info</span>-->
+                    <!--          </ng-template>-->
+                    <a ngbNavLink>Account info</a>
+                    <ng-template ngbNavContent>
+                        <div class="bg-white rounded mt-3 p-15">
+                            <!--        <div *ngIf="loader" class="loader"></div>-->
+
+                            <div class="col-xl-4">
+                                <table class="table">
+                                    <thead>
+                                        <tr *ngIf="!loader">
+                                            <th>Description</th>
+                                            <th>Data</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ngx-skeleton-loader
+                                            *ngIf="loader"
+                                            [count]="7"
+                                        ></ngx-skeleton-loader>
+                                        <tr *ngIf="!loader">
+                                            <td>Account Number.</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.accnumber ||
+                                                        account?.cardacct ||
+                                                        account?.loanaccnumber
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="!loader">
+                                            <td>Outstanding balance</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.oustbalance ||
+                                                        account?.outbalance ||
+                                                        account?.loanamount
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="!loader">
+                                            <td>Total arrears/EXPPMNT</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.instamount ||
+                                                        account?.EXPPMNT
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="!loader">
+                                            <td>Bucket/cycle</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.bucket ||
+                                                        account?.cycle ||
+                                                        account?.grade
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="!loader">
+                                            <td>AROCODE</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.arocode
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="!loader">
+                                            <td>RROCODE</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.rrocode
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="!loader">
+                                            <td>BranchName</td>
+                                            <td>
+                                                <strong>{{
+                                                    account?.branchcode
+                                                }}</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+                <li ngbNavItem="Other accounts">
+                    <!--          <ng-template ngbPanelTitle>-->
+                    <!--            <span class="d-sm-none">Other accounts</span>-->
+                    <!--            <span class="d-sm-block d-none">Other accounts</span>-->
+                    <!--          </ng-template>-->
+                    <a ngbNavLink>Other accounts</a>
+                    <ng-template ngbNavContent>
+                        <!--<form>
+              <div class="form-group form-inline">
+                  Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+              </div> ; index as i  <th scope="row">{{ i + 1 }}</th> <th scope="col">#</th>
+          </form>-->
+                        <div class="bg-white rounded mt-3 p-15">
+                            <!--          <div *ngIf="loader" class="loader"></div>-->
+                            <div class="col-xl-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr *ngIf="!loader">
+                                            <th>accnumber</th>
+                                            <th>productcode</th>
+                                            <th>oustbalance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ngx-skeleton-loader
+                                            *ngIf="loader"
+                                            [count]="7"
+                                        ></ngx-skeleton-loader>
+                                        <tr *ngFor="let other of otheraccs">
+                                            <td>
+                                                {{ other.ACCNUMBER }}
+                                            </td>
+                                            <td>{{ other.PRODUCTCODE }}</td>
+                                            <td>
+                                                {{ other.OUTSBALANCE | number }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+                        </div>
+                    </ng-template>
+                </li>
+                <li ngbNavItem="Collateral info">
+                    <!--          <ng-template ngbPanelTitle>-->
+                    <!--            <span class="d-sm-none">Collateral info</span>-->
+                    <!--            <span class="d-sm-block d-none">Collateral info</span>-->
+                    <!--          </ng-template>-->
+                    <a ngbNavLink>Collateral info</a>
+                    <ng-template ngbNavContent>
+                        <div class="bg-white rounded mt-3 p-15">
+                            <!--          <div *ngIf="loader" class="loader"></div>-->
+                            <div class="col-xl-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr *ngIf="!loader">
+                                            <th>#</th>
+                                            <th>description</th>
+                                            <th>forced sale value</th>
+                                            <th>market value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ngx-skeleton-loader
+                                            *ngIf="loader"
+                                            [count]="7"
+                                        ></ngx-skeleton-loader>
+                                        <tr
+                                            *ngFor="
+                                                let c of collaterals;
+                                                index as i
+                                            "
+                                        >
+                                            <th scope="row">{{ i + 1 }}</th>
+                                            <td>
+                                                {{ c.description }}
+                                            </td>
+                                            <td>{{ c.fsv }}</td>
+                                            <td>{{ c.msv }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+
+                <li ngbNavItem="Directors">
+                    <!--          <ng-template ngbPanelTitle>-->
+                    <!--            <span class="d-sm-none">Directors</span>-->
+                    <!--            <span class="d-sm-block d-none">Directors</span>-->
+                    <!--          </ng-template>-->
+                    <a ngbNavLink>Directors</a>
+                    <ng-template ngbNavContent>
+                        <div class="bg-white rounded mt-3 p-15">
+                            <!--          <div *ngIf="loader" class="loader"></div>-->
+                            <div class="col-xl-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr *ngIf="!loader">
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>IDNuber</th>
+                                            <th>Telnumber</th>
+                                            <th>address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ngx-skeleton-loader
+                                            *ngIf="loader"
+                                            [count]="7"
+                                        ></ngx-skeleton-loader>
+                                        <tr
+                                            *ngFor="
+                                                let director of directors;
+                                                index as i
+                                            "
+                                        >
+                                            <th scope="row">{{ i + 1 }}</th>
+                                            <td>
+                                                {{ director.name }}
+                                            </td>
+                                            <td>{{ director.idnumber }}</td>
+                                            <td>{{ director.telnumber }}</td>
+                                            <td>{{ director.address }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+
+                <li ngbNavItem="Credit Card">
+                    <!--          <ng-template ngbPanelTitle>-->
+                    <!--            <span class="d-sm-none">Credit Card</span>-->
+                    <!--            <span class="d-sm-block d-none">Credit Card</span>-->
+                    <!--          </ng-template>-->
+                    <a ngbNavLink>Credit Card</a>
+                    <ng-template ngbNavContent>
+                        <div class="bg-white rounded mt-3 p-15">
+                            <!--<form>
+                          <div class="form-group form-inline">
+                              Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+                          </div>
+                      </form>-->
+                            <!--          <div *ngIf="loader" class="loader"></div>-->
+                            <div class="col-xl-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr *ngIf="!loader">
+                                            <th>#</th>
+                                            <th>CardNumber</th>
+                                            <th>CardAcct</th>
+                                            <th>CardName</th>
+                                            <th>OustBalance</th>
+                                            <th>ExpAmount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ngx-skeleton-loader
+                                            *ngIf="loader"
+                                            [count]="7"
+                                        ></ngx-skeleton-loader>
+                                        <tr
+                                            *ngFor="
+                                                let card of cards;
+                                                index as i
+                                            "
+                                        >
+                                            <th scope="row">{{ i + 1 }}</th>
+                                            <td>
+                                                {{ card.cardnumber }}
+                                            </td>
+                                            <td>
+                                                {{ card.cardacct }}
+                                            </td>
+                                            <td>
+                                                {{ card.cardname }}
+                                            </td>
+                                            <td>
+                                                {{ card.oustbalance | number }}
+                                            </td>
+                                            <td>
+                                                {{ card.expamount | number }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+
+                <li ngbNavItem="With Same ID Number">
+                    <!--          <ng-template ngbPanelTitle>-->
+                    <!--            <span class="d-sm-none">With Same ID Number</span>-->
+                    <!--            <span class="d-sm-block d-none">With Same ID Number</span>-->
+                    <!--          </ng-template>-->
+                    <a ngbNavLink>With Same ID Number</a>
+                    <ng-template ngbNavContent>
+                        <div class="bg-white rounded mt-3 p-15">
+                            <!--<form>
+                              <div class="form-group form-inline">
+                                  Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+                              </div>
+                          </form>-->
+                            <div class="col-xl-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr *ngIf="!loader">
+                                            <th>#</th>
+                                            <th>accnumber</th>
+                                            <th>arocode</th>
+                                            <th>oustbalance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ngx-skeleton-loader
+                                            *ngIf="loader"
+                                            [count]="7"
+                                        ></ngx-skeleton-loader>
+                                        <tr
+                                            *ngFor="
+                                                let d of accwithid;
+                                                index as i
+                                            "
+                                        >
+                                            <th scope="row">{{ i + 1 }}</th>
+                                            <td>
+                                                {{ d.accnumber }}
+                                            </td>
+                                            <td>{{ d.arocode }}</td>
+                                            <td>
+                                                {{ d.oustbalance | number }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+            </ul>
+            <!-- end nav-tabs -->
+            <div [ngbNavOutlet]="nav" class="ml-4"></div>
+        </div>
+    </div>
+</app-panel>

@@ -12,21 +12,22 @@ const Work = {
   caret: 'true',
   submenu: [
     {
-      title: 'Loan arrears(ALL)',
+      title: 'Loan arrears',
       url: '/work/viewall',
     },
     {
-      title: 'Broken PTPs',
-      url: '/work/ptps',
-    },
-    {
-      title: 'View all Loans',
-      url: '/work/allloans',
+      title: 'My Allocations',
+      url: '/work/worklist',
     },
     {
       title: 'My Worklist',
       url: '/work/worklist',
     },
+    {
+      title: 'Promises to Pay',
+      url: '/work/ptps',
+    },
+    
   ],
 };
 
@@ -35,17 +36,21 @@ const Work = {
 
 const Configurations = {
   title: 'Configurations',
-  url: '/work',
+  url: '/settings',
   icon: 'fas fa-briefcase',
   caret: 'true',
   submenu: [
     {
       title: 'Commissions',
-      url: '/work/viewall',
+      url: '/settings/commissions',
     },
     {
       title: 'Excel Uploads',
-      url: '/work/exceluploads',
+      url: '/settings/exceluploads',
+    },
+    {
+      title: 'Settings',
+      url: '/settings/home',
     }
   ],
 };
