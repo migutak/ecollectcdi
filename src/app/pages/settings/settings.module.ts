@@ -26,7 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgProgressModule } from 'ngx-progressbar';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 
-const routes: Routes = [{ path: '', component: SettingshomeComponent }];
+const routes: Routes = [{ path: '/home', component: SettingshomeComponent }];
 
 @NgModule({
     declarations: [

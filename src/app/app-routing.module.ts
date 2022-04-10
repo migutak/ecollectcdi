@@ -1,18 +1,47 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SettingsModule } from './pages/settings/settings.module';
 
 // Home
 import { HomePage } from './pages/home/home';
+import { SettingshomeComponent } from './pages/settings/settingshome/settingshome.component';
+import { CommissionsComponent } from './pages/settings/commissions/commissions.component';
+import { ExceluploadsComponent } from './pages/settings/exceluploads/exceluploads.component';
+import { ViewallComponent } from './pages/viewall/viewall.component';
+import { MyworklistComponent } from './pages/myworklist/myworklist.component';
+import { MyallocationsComponent } from './pages/myallocations/myallocations.component';
+import { PtpsComponent } from './pages/ptps/ptps.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePage, data: { title: 'Home' } },
   {
-    path: 'settings',
-    loadChildren: () => SettingsModule,
-    data: { title: 'Reminders' },
+    path: 'settings/home',
+    component: SettingshomeComponent
+  },
+  {
+    path: 'settings/exceluploads',
+    component: ExceluploadsComponent
+  },
+  {
+    path: 'settings/commissions',
+    component: CommissionsComponent
+  },
+  {
+    path: 'work/viewall',
+    component: ViewallComponent
+  },
+  {
+    path: 'work/myallocations',
+    component: MyallocationsComponent
+  },
+  {
+    path: 'work/myworklist',
+    component: MyworklistComponent
+  },
+  {
+    path: 'work/ptp',
+    component: PtpsComponent
   }
 ];
 
