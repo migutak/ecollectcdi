@@ -1,7 +1,9 @@
-/.angular/
 /node_modules/
-/src/scss/transparent/
-/src/scss/material/
-/src/scss/google/
-/src/scss/facebook/
-/src/scss/apple/
+/env.ts/
+node_modules
+env.ts
+dist
+out-tsc
+ecollect
+ecollectcdi
+.angular

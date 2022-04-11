@@ -7,7 +7,11 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a href="/" class="navbar-brand"><span class="navbar-logo"></span> <b>Color</b> Admin</a>
+      <img
+              src="assets/cdi_logo.png"
+              alt="CDI_logo"
+              style="width: 220px; height: auto"
+      />
     <button type="button" class="navbar-mobile-toggler" (click)="toggleAppTopMenuMobile()" *ngIf="this.appSettings.appTopMenu && !this.appSettings.appSidebarNone">
       <span class="fa-stack fa-lg text-inverse">
         <i class="far fa-square fa-stack-2x"></i>
@@ -74,14 +78,6 @@
 
   <!-- BEGIN nav -->
   <div class="navbar-nav">
-		<div class="navbar-item navbar-form">
-			<form action="" method="POST" name="search">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Enter keyword" />
-					<button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-				</div>
-			</form>
-		</div>
     <div class="navbar-item dropdown" ngbDropdown>
       <a href="javascript:;" ngbDropdownToggle class="navbar-link dropdown-toggle icon">
         <i class="fa fa-bell"></i>
@@ -114,7 +110,7 @@
 					<i class="fa fa-user"></i>
 				</div>
         <span>
-					<span class="d-none d-md-inline">Adam Schwartz</span>
+					<span class="d-none d-md-inline">John Doe</span>
 					<b class="caret"></b>
 				</span>
       </a>

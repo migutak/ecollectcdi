@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ecollect_cdi.iml" filepath="$PROJECT_DIR$/.idea/ecollect_cdi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ecollectcdi.iml" filepath="$PROJECT_DIR$/.idea/ecollectcdi.iml" />
     </modules>
   </component>
 </project>

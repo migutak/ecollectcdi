@@ -1,41 +1,83 @@
-var appMenus = [{
-  'icon': 'fa fa-sitemap',
-  'title': 'Home',
-  'url': '/home'
-},{
-  'icon': 'fa fa-align-left',
-  'title': 'Menu Level',
-  'url': '',
-  'caret': 'true',
-  'submenu': [{
-    'url': '',
-    'title': 'Menu 1.1',
-    'caret': 'true',
-    'submenu': [{
-      'url': '',
-      'title': 'Menu 2.1',
-      'caret': 'true',
-      'submenu': [{
-        'url': '',
-        'title': 'Menu 3.1',
-      },{
-        'url': '',
-        'title': 'Menu 3.2'
-      }]
-    },{
-      'url': '',
-      'title': 'Menu 2.2'
-    },{
-      'url': '',
-      'title': 'Menu 2.3'
-    }]
-  },{
-    'url': '',
-    'title': 'Menu 1.2'
-  },{
-    'url': '',
-    'title': 'Menu 1.3'
-  }]
-}];
+const Home = {
+  icon: 'fas fa-home',
+  title: 'Home',
+  url: '/home',
+};
+
+
+const Work = {
+  title: 'Loans Queue',
+  url: '/work',
+  icon: 'fas fa-briefcase',
+  caret: 'true',
+  submenu: [
+    {
+      title: 'Loan arrears',
+      url: '/work/viewall',
+    },
+    {
+      title: 'My Allocations',
+      url: '/work/myallocations',
+    },
+    {
+      title: 'My Worklist',
+      url: '/work/myworklist',
+    },
+    {
+      title: 'Promises to Pay',
+      url: '/work/ptp',
+    },
+    
+  ],
+};
+
+
+
+
+const Configurations = {
+  title: 'Configurations',
+  url: '/settings',
+  icon: 'fas fa-briefcase',
+  caret: 'true',
+  submenu: [
+    {
+      title: 'Commissions',
+      url: '/settings/commissions',
+    },
+    {
+      title: 'Import accounts',
+      url: '/settings/exceluploads',
+    },
+    {
+      title: 'Settings',
+      url: '/settings/home',
+    }
+  ],
+};
+
+
+
+const collector = [
+  Home,
+  Work
+];
+
+
+const teamleader = [
+  Home,
+  Work,
+  Configurations
+];
+
+let appMenus: any[];
+
+if (1) {
+  appMenus = teamleader;
+} else if (2) {
+  appMenus = collector;
+} else {
+  appMenus = teamleader;
+}
+
 
 export default appMenus;

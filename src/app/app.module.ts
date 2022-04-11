@@ -7,6 +7,7 @@ import { NgbModule }                             from '@ng-bootstrap/ng-bootstra
 import { NgModule }                              from '@angular/core';
 import { FormsModule, ReactiveFormsModule }      from '@angular/forms';
 import * as global                               from './config/globals';
+import { HttpClientModule } from '@angular/common/http';
 
 // Main Component
 import { AppComponent }                    from './app.component';
@@ -45,6 +46,11 @@ FullCalendarModule.registerPlugins([
   listPlugin,
   bootstrapPlugin
 ]);
+import { AgGridModule } from 'ag-grid-angular';
+import { ModuleRegistry } from '@ag-grid-community/core';
+import { ColumnsToolPanelModule } from '@ag-grid-enterprise/column-tool-panel';
+import { MenuModule } from '@ag-grid-enterprise/menu';
+import { ServerSideRowModelModule } from '@ag-grid-enterprise/server-side-row-model'
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { PerfectScrollbarModule }          from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG }        from 'ngx-perfect-scrollbar';
@@ -55,6 +61,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 // Pages
 import { HomePage }          from './pages/home/home';
+
+// Register the required feature modules with the Grid
+ModuleRegistry.registerModules([
+  ServerSideRowModelModule,
+  MenuModule,
+  ColumnsToolPanelModule,
+]);
 
 @NgModule({
   declarations: [
@@ -75,6 +88,10 @@ import { HomePage }          from './pages/home/home';
     NgbModule,
     PerfectScrollbarModule,
     HighlightModule,
+    HttpClientModule,
+    BrowserModule,
+    FormsModule,
+    AgGridModule.withComponents([]),
     FullCalendarModule,
     NgxEditorModule,
     ColorSketchModule,
@@ -83,7 +100,6 @@ import { HomePage }          from './pages/home/home';
     CountdownModule,
     NgxDatatableModule,
     SweetAlert2Module.forRoot(),
-    FormsModule,
     ReactiveFormsModule,
     NgChartjsModule,
     TrendModule,
@@ -116,7 +132,7 @@ export class AppModule {
   constructor(private router: Router, private titleService: Title, private route: ActivatedRoute) {
     router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
-        var title = 'Color Admin | ' + this.route.snapshot.firstChild.data['title'];
+        var title = 'E-Collect | ' + this.route.snapshot.firstChild.data['title'];
         this.titleService.setTitle(title);
       }
     });
