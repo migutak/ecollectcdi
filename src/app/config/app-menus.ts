@@ -45,7 +45,7 @@ const Configurations = {
       url: '/settings/commissions',
     },
     {
-      title: 'Excel Uploads',
+      title: 'Import accounts',
       url: '/settings/exceluploads',
     },
     {

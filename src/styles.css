@@ -4,7 +4,8 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import '~@fullcalendar/daygrid/main.css';
 @import '~angular-calendar/css/angular-calendar.css';
-
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 /*Show hand cursor when hovering a link*/
 a:hover {
