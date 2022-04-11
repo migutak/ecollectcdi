@@ -46,7 +46,6 @@ FullCalendarModule.registerPlugins([
   listPlugin,
   bootstrapPlugin
 ]);
-import { AgGridModule } from 'ag-grid-angular';
 import { ModuleRegistry } from '@ag-grid-community/core';
 import { ColumnsToolPanelModule } from '@ag-grid-enterprise/column-tool-panel';
 import { MenuModule } from '@ag-grid-enterprise/menu';
@@ -61,6 +60,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 // Pages
 import { HomePage }          from './pages/home/home';
+import {PtpsComponent} from './pages/ptps/ptps.component';
+import {ViewallComponent} from './pages/viewall/viewall.component';
+import {AgGridModule} from '@ag-grid-community/angular';
 
 // Register the required feature modules with the Grid
 ModuleRegistry.registerModules([
@@ -79,7 +81,9 @@ ModuleRegistry.registerModules([
     PanelComponent,
     FloatSubMenuComponent,
     ThemePanelComponent,
-    HomePage
+    HomePage,
+      PtpsComponent,
+    ViewallComponent
   ],
   imports: [
     AppRoutingModule,
@@ -108,7 +112,8 @@ ModuleRegistry.registerModules([
       useFactory: adapterFactory
     }),
     NgxDaterangepickerMd.forRoot(),
-    NgxChartsModule
+    NgxChartsModule,
+    AgGridModule
   ],
   providers: [ Title, {
     provide: PERFECT_SCROLLBAR_CONFIG,

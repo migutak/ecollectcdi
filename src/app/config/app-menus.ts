@@ -27,7 +27,7 @@ const Work = {
       title: 'Promises to Pay',
       url: '/work/ptp',
     },
-    
+
   ],
 };
 

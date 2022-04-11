@@ -1,13 +1,29 @@
-
-
 <!-- begin panel -->
+
 <div>
     <ag-grid-angular
-    style="width: 500px; height: 500px;"
-    class="ag-theme-alpine"
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
->
-</ag-grid-angular>
+        #agGrid
+        (gridReady)="onGridReady($event)"
+        (rowClicked)="onRowDoubleClicked($event)"
+        [animateRows]="true"
+        [columnDefs]="columnDefs"
+        [rowClassRules]="rowClassRules"
+        [defaultColDef]="defaultColDef"
+        [enableRangeSelection]="true"
+        [floatingFilter]="true"
+        [serverSideStoreType]="serverSideStoreType"
+        [overlayNoRowsTemplate]="overlayNoRowsTemplate"
+        [modules]="modules"
+        [paginationAutoPageSize]="true"
+        [pagination]="true"
+        [pivotPanelShow]="pivotPanelShow"
+        [rowData]="rowData"
+        [rowDragManaged]="true"
+        [rowModelType]="rowModelType"
+        [sideBar]="true"
+        class="ag-theme-balham"
+        id="myGrid"
+        style="width: 100%; height: 700px"
+    ></ag-grid-angular>
 </div>
 <!-- end panel -->

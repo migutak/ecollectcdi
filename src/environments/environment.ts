@@ -62,6 +62,6 @@ export const environment = {
     flem_server: 'http://localhost:9500',
     elasticsearch: 'https://localhost:9200',
     streamapi: 'http://127.0.0.1:8105/streamapi/utilizationrptbranches',
-    srcMainDashboard : "https://ecollect.inteligen.co.ke/kibana/app/dashboards#/view/291a4b50-b2d5-11ec-8470-d7041aae7a20?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-7d%2Cto%3Anow))"
-    
+    srcMainDashboard : 'https://ecollect.inteligen.co.ke/kibana/app/dashboards#/view/291a4b50-b2d5-11ec-8470-d7041aae7a20?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-7d%2Cto%3Anow))'
+
 };
